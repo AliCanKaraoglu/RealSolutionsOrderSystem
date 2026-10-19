@@ -59,6 +59,7 @@ namespace DataAccess.Concrete.EntityFramework.Contexts
         public DbSet<Product> Products { get; set; }
         public DbSet<Warehouse> Warehouses { get; set; }
         public DbSet<Order> Orders { get; set; }
+       
 
 
 
@@ -70,14 +71,14 @@ namespace DataAccess.Concrete.EntityFramework.Contexts
 
             foreach (var kayit in kayitlar)
             {
-                //kayýt ekleme added
+                //kayï¿½t ekleme added
                 if (kayit.State == EntityState.Added)
                 {
                     kayit.Entity.CreatedDate = DateTime.Now;
                     kayit.Entity.Status = true;
                     kayit.Entity.IsDeleted = false;
                 }
-                //güncelleme modife
+                //gï¿½ncelleme modife
                 else if (kayit.State == EntityState.Modified)
                 {
                     kayit.Entity.LastUpdatedDate = DateTime.Now;

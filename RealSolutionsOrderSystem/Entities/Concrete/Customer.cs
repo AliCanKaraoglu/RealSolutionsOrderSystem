@@ -1,6 +1,8 @@
-﻿namespace Entities.Concrete
+﻿using Core.Entities;
+namespace Entities.Concrete
+
 {
-    public class Customer : BaseEntity
+    public class Customer : BaseEntity, IEntity
     {
         public string CustomerName { get; set; }
         public string CustomerCode { get; set; }

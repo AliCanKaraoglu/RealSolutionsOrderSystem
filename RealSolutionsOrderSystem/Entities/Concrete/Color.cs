@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Core.Entities;
+
 
 namespace Entities.Concrete
 {
-    public class Color: BaseEntity
+    public class Color: BaseEntity, IEntity
 
     {
            public string Name  { get; set; } 
