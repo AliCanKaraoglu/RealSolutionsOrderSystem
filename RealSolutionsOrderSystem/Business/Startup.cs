@@ -90,6 +90,8 @@ namespace Business
         public void ConfigureDevelopmentServices(IServiceCollection services)
         {
             ConfigureServices(services);
+            services.AddTransient<IOrderRepository, OrderRepository>();
+            services.AddTransient<IWarehouseRepository, WarehouseRepository>();
             services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<IColorRepository, ColorRepository>();
             services.AddTransient<ICustomerRepository, CustomerRepository>();
@@ -119,6 +121,8 @@ namespace Business
         public void ConfigureStagingServices(IServiceCollection services)
         {
             ConfigureServices(services);
+            services.AddTransient<IOrderRepository, OrderRepository>();
+            services.AddTransient<IWarehouseRepository, WarehouseRepository>();
             services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<IColorRepository, ColorRepository>();
             services.AddTransient<ICustomerRepository, CustomerRepository>();
@@ -144,6 +148,8 @@ namespace Business
         public void ConfigureProductionServices(IServiceCollection services)
         {
             ConfigureServices(services);
+            services.AddTransient<IOrderRepository, OrderRepository>();
+            services.AddTransient<IWarehouseRepository, WarehouseRepository>();
             services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<IColorRepository, ColorRepository>();
             services.AddTransient<ICustomerRepository, CustomerRepository>();

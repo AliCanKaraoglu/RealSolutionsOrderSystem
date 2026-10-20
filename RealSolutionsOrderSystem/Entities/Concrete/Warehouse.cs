@@ -13,6 +13,6 @@ namespace Entities.Concrete
     {
         public int ProductId { get; set; }
         public int Quantity { get; set; }
-        public int IsReadyForSale { get; set; }
+        public bool IsReadyForSale { get; set; }
     }
 }
