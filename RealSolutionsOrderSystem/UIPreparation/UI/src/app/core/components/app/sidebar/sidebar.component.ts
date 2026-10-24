@@ -3,6 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { AuthService } from '../../admin/login/services/auth.service';
+import { CustomerComponent } from 'app/core/components/customer/customer.component';
+import { ColorComponent } from 'app/core/components/color/color.component';
+import { ProductComponent } from 'app/core/components/product/product.component';
+import { WarehouseComponent } from 'app/core/components/warehouse/warehouse.component';
+import { OrderComponent } from 'app/core/components/order/order.component';
 
 
 declare const $: any;
@@ -19,7 +24,12 @@ export const ADMINROUTES: RouteInfo[] = [
   { path: '/operationclaim', title: 'OperationClaim', icon:'local_police', class: '', claim:"GetOperationClaimsQuery"},
   { path: '/language', title: 'Languages', icon:'language', class: '', claim:"GetLanguagesQuery" },
   { path: '/translate', title: 'TranslateWords', icon: 'translate', class: '', claim: "GetTranslatesQuery" },
-  { path: '/log', title: 'Logs', icon: 'update', class: '', claim: "GetLogDtoQuery" }
+    { path: '/log', title: 'Logs', icon: 'update', class: '', claim: "GetLogDtoQuery" },
+    { path: '/customer', title: 'Müþteri Tanýmlama', icon: 'person', class: '', claim: 'GetCustomersQuery' },
+    { path: '/product', title: 'Ürün Tanýmlama', icon: 'shopping_basket', class: '', claim: 'GetProductsQuery' },
+    { path: '/order', title: 'Sipariþ Tanýmlama', icon: 'add_shopping_cart', class: '', claim: 'CreateOrderCommand' },
+    { path: '/warehouse', title: 'Depo Rapor Ekraný', icon: 'store', class: '', claim: 'GetWarehousesQuery' }
+
 ];
 
 export const USERROUTES: RouteInfo[] = [ 

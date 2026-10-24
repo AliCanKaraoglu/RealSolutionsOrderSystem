@@ -28,6 +28,14 @@ import { OperationClaimComponent } from '../components/admin/operationclaim/oper
 import { LogDtoComponent } from '../components/admin/log/logDto.component';
 import { MatSortModule } from '@angular/material/sort';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { CustomerComponent } from 'app/core/components/customer/customer.component';
+import { ColorComponent } from 'app/core/components/color/color.component';
+import { ProductComponent } from 'app/core/components/product/product.component';
+import { WarehouseComponent } from 'app/core/components/warehouse/warehouse.component';
+import { OrderComponent } from 'app/core/components/order/order.component';
+
+
+
 
 
 // export function layoutHttpLoaderFactory(http: HttpClient) {
@@ -68,10 +76,15 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
         UserComponent,
         LoginComponent,
         GroupComponent,
+        OperationClaimComponent,
         LanguageComponent,
         TranslateComponent,
-        OperationClaimComponent,
-        LogDtoComponent
+        LogDtoComponent,
+        CustomerComponent,
+        ColorComponent,
+        ProductComponent,
+        WarehouseComponent,
+        OrderComponent
 
     ]
 })
