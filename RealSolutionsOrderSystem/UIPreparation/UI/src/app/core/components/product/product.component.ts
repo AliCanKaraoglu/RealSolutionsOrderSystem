@@ -6,9 +6,11 @@ import { MatTableDataSource } from '@angular/material/table';
 import { AlertifyService } from 'app/core/services/alertify.service';
 import { LookUpService } from 'app/core/services/lookUp.service';
 import { AuthService } from 'app/core/components/admin/login/services/auth.service';
-import { Product } from './models/Product';
-import { ProductService } from './services/Product.service';
+import { Product } from './models/product';
+import { ProductService } from './services/product.service';
 import { environment } from 'environments/environment';
+import { MatDialog } from '@angular/material/dialog';
+import { ColorComponent } from '../color/color.component';
 
 declare var jQuery: any;
 
@@ -22,7 +24,7 @@ export class ProductComponent implements AfterViewInit, OnInit {
 	dataSource: MatTableDataSource<any>;
 	@ViewChild(MatPaginator) paginator: MatPaginator;
 	@ViewChild(MatSort) sort: MatSort;
-	displayedColumns: string[] = ['id','createdUserId','createdDate','lastUpdatedUserId','lastUpdatedDate','status','isDeleted','name','colorId', 'update','delete'];
+	displayedColumns: string[] = ['id','createdUserId','createdDate','lastUpdatedUserId','lastUpdatedDate','status','isDeleted','name','colorId','size', 'update','delete'];
 
 	productList:Product[];
 	product:Product=new Product();
@@ -32,7 +34,7 @@ export class ProductComponent implements AfterViewInit, OnInit {
 
 	productId:number;
 
-	constructor(private productService:ProductService, private lookupService:LookUpService,private alertifyService:AlertifyService,private formBuilder: FormBuilder, private authService:AuthService) { }
+	constructor(private productService: ProductService, private lookupService: LookUpService, private alertifyService: AlertifyService, private formBuilder: FormBuilder, private authService: AuthService, public dialog: MatDialog) { }
 
     ngAfterViewInit(): void {
         this.getProductList();
@@ -105,7 +107,8 @@ lastUpdatedDate : [null, Validators.required],
 status : [false, Validators.required],
 isDeleted : [false, Validators.required],
 name : ["", Validators.required],
-colorId : [0, Validators.required]
+			colorId: [0, Validators.required],
+size : [1,Validators.required]
 		})
 	}
 
@@ -156,5 +159,14 @@ colorId : [0, Validators.required]
 			this.dataSource.paginator.firstPage();
 		}
 	}
-
+	openColorModal() {
+		this.dialog.open(ColorComponent, { width: '850px' }); //ürün sayfasýna renk tanýmlama metodu 
+	}
+	getSizeText(size: number): string {
+		if (size == 1) return 'S';
+		if (size == 2) return 'M';
+		if (size == 3) return 'L';
+		if (size == 4) return 'XL';
+		return '-';  // 1,2,3,4 ü s,m,l,xl gösterme angular videosunun HATIRLATMA DEVAMINI ÝZLEMEYÝ UNUTMA 
+	}
   }
