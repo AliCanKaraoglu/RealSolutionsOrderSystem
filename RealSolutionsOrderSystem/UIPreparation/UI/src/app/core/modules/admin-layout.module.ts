@@ -33,6 +33,7 @@ import { ColorComponent } from 'app/core/components/color/color.component';
 import { ProductComponent } from 'app/core/components/product/product.component';
 import { WarehouseComponent } from 'app/core/components/warehouse/warehouse.component';
 import { OrderComponent } from 'app/core/components/order/order.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -59,6 +60,7 @@ import { OrderComponent } from 'app/core/components/order/order.component';
         MatPaginatorModule,
         MatSortModule,
         MatCheckboxModule,
+        MatDialogModule,
         NgbModule,
         NgMultiSelectDropDownModule,
         SweetAlert2Module,
