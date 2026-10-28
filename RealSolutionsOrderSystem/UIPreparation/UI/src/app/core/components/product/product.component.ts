@@ -4,7 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { AlertifyService } from 'app/core/services/alertify.service';
-import { LookUpService } from 'app/core/services/lookUp.service';
+import { LookUpService } from 'app/core/services/LookUp.service';
 import { AuthService } from 'app/core/components/admin/login/services/auth.service';
 import { Product } from './models/product';
 import { ProductService } from './services/product.service';
@@ -101,9 +101,9 @@ export class ProductComponent implements AfterViewInit, OnInit {
 		this.productAddForm = this.formBuilder.group({		
 			id : [0],
 createdUserId : [0, Validators.required],
-createdDate : [null, Validators.required],
+			createdDate: [new Date()],
 lastUpdatedUserId : [0, Validators.required],
-lastUpdatedDate : [null, Validators.required],
+			lastUpdatedDate: [new Date()],
 status : [false, Validators.required],
 isDeleted : [false, Validators.required],
 name : ["", Validators.required],

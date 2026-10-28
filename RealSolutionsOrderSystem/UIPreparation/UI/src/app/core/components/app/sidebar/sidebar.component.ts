@@ -28,7 +28,8 @@ export const ADMINROUTES: RouteInfo[] = [
     { path: '/customer', title: 'Müþteri Tanýmlama', icon: 'person', class: '', claim: 'GetCustomersQuery' },
     { path: '/product', title: 'Ürün Tanýmlama', icon: 'shopping_basket', class: '', claim: 'GetProductsQuery' },
     { path: '/order', title: 'Sipariþ Tanýmlama', icon: 'add_shopping_cart', class: '', claim: 'CreateOrderCommand' },
-    { path: '/warehouse', title: 'Depo Rapor Ekraný', icon: 'store', class: '', claim: 'GetWarehousesQuery' }
+    { path: '/warehouse', title: 'Depo Rapor Ekraný', icon: 'store', class: '', claim: 'GetWarehousesQuery' },
+    { path: '/order', title: 'Sipariþ Rapor Ekraný', icon: 'assignment', class: '', claim: 'GetOrdersQuery' }
 
 ];
 

@@ -13,7 +13,7 @@ namespace WebAPI.Controllers
     /// <summary>
     /// Colors If controller methods will not be Authorize, [AllowAnonymous] is used.
     /// </summary>
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     public class ColorsController : BaseApiController
     {

@@ -4,10 +4,10 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { AlertifyService } from 'app/core/services/alertify.service';
-import { LookUpService } from 'app/core/services/lookUp.service';
+import { LookUpService } from 'app/core/services/LookUp.service';
 import { AuthService } from 'app/core/components/admin/login/services/auth.service';
-import { Warehouse } from './models/Warehouse';
-import { WarehouseService } from './services/Warehouse.service';
+import { Warehouse } from './models/warehouse';
+import { WarehouseService } from './services/warehouse.service';
 import { environment } from 'environments/environment';
 
 declare var jQuery: any;
@@ -99,9 +99,9 @@ export class WarehouseComponent implements AfterViewInit, OnInit {
 		this.warehouseAddForm = this.formBuilder.group({		
 			id : [0],
 createdUserId : [0, Validators.required],
-createdDate : [null, Validators.required],
+			createdDate: [new Date()],
 lastUpdatedUserId : [0, Validators.required],
-lastUpdatedDate : [null, Validators.required],
+			lastUpdatedDate: [new Date()],
 status : [false, Validators.required],
 isDeleted : [false, Validators.required],
 productId : [0, Validators.required],

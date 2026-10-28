@@ -13,7 +13,8 @@ namespace WebAPI.Controllers
     /// <summary>
     /// Products If controller methods will not be Authorize, [AllowAnonymous] is used.
     /// </summary>
-    [Route("api/[controller]")]
+
+    [Route("api/v1/[controller]")]
     [ApiController]
     public class ProductsController : BaseApiController
     {
