@@ -96,17 +96,11 @@ export class OrderComponent implements AfterViewInit, OnInit {
 	}
 
 	createOrderAddForm() {
-		this.orderAddForm = this.formBuilder.group({		
-			id : [0],
-createdUserId : [0, Validators.required],
-			createdDate: [new Date()],
-lastUpdatedUserId : [0, Validators.required],
-			lastUpdatedDate: [new Date()],
-status : [false, Validators.required],
-isDeleted : [false, Validators.required],
-customerId : [0, Validators.required],
-productId : [0, Validators.required],
-quantity : [0, Validators.required]
+		this.orderAddForm = this.formBuilder.group({
+			id: [0],
+			customerId: [1, Validators.required],
+			productId: [1, Validators.required],
+			quantity: [1, Validators.required]
 		})
 	}
 

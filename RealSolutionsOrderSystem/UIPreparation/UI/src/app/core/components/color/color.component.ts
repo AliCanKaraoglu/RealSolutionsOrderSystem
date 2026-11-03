@@ -96,15 +96,9 @@ export class ColorComponent implements AfterViewInit, OnInit {
 	}
 
 	createColorAddForm() {
-		this.colorAddForm = this.formBuilder.group({		
-			id : [0],
-createdUserId : [0, Validators.required],
-			createdDate: [new Date()],
-lastUpdatedUserId : [0, Validators.required],
-			lastUpdatedDate: [new Date()],
-status : [false, Validators.required],
-isDeleted : [false, Validators.required],
-name : ["", Validators.required]
+		this.colorAddForm = this.formBuilder.group({
+			id: [0],
+			name: ["", Validators.required]
 		})
 	}
 

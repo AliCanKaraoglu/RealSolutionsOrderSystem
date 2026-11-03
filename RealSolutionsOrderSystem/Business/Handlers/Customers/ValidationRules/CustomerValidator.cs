@@ -9,10 +9,7 @@ namespace Business.Handlers.Customers.ValidationRules
     {
         public CreateCustomerValidator()
         {
-            RuleFor(x => x.CustomerCode).NotEmpty();
-            RuleFor(x => x.Address).NotEmpty();
-            RuleFor(x => x.PhoneNumber).NotEmpty();
-            RuleFor(x => x.Email).NotEmpty();
+          
 
         }
     }
@@ -20,10 +17,7 @@ namespace Business.Handlers.Customers.ValidationRules
     {
         public UpdateCustomerValidator()
         {
-            RuleFor(x => x.CustomerCode).NotEmpty();
-            RuleFor(x => x.Address).NotEmpty();
-            RuleFor(x => x.PhoneNumber).NotEmpty();
-            RuleFor(x => x.Email).NotEmpty();
+          
 
         }
     }
