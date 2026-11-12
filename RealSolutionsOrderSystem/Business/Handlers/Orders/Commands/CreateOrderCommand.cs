@@ -1,5 +1,4 @@
-﻿
-using Business.BusinessAspects;
+﻿using Business.BusinessAspects;
 using Business.Constants;
 using Core.Aspects.Autofac.Caching;
 using Core.Aspects.Autofac.Logging;
@@ -16,12 +15,8 @@ using Business.Handlers.Orders.ValidationRules;
 
 namespace Business.Handlers.Orders.Commands
 {
-    /// <summary>
-    /// 
-    /// </summary>
     public class CreateOrderCommand : IRequest<IResult>
     {
-
         public int CreatedUserId { get; set; }
         public System.DateTime CreatedDate { get; set; }
         public int LastUpdatedUserId { get; set; }
@@ -31,7 +26,6 @@ namespace Business.Handlers.Orders.Commands
         public int CustomerId { get; set; }
         public int ProductId { get; set; }
         public int Quantity { get; set; }
-
 
         public class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommand, IResult>
         {
@@ -55,7 +49,12 @@ namespace Business.Handlers.Orders.Commands
             [SecuredOperation(Priority = 1)]
             public async Task<IResult> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
             {
-               var depo = _warehouseRepository.Get(x => x.ProductId == request.ProductId && x.IsDeleted == false);
+                if (request.Quantity <= 0)
+                {
+                    return new ErrorResult("Sipariş adedi 0 veya negatif olamaz.");
+                }
+
+                var depo = _warehouseRepository.Get(x => x.ProductId == request.ProductId && x.IsDeleted == false);
 
                 if (depo == null)
                 {
